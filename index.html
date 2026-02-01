@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Reha</title>
+  <title>Reha</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
@@ -14,60 +14,68 @@
       height: 100vh;
       font-family: 'Inter', sans-serif;
       background:
-        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+        linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.75)),
+        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6');
       background-size: cover;
       background-position: center;
-      color: #f2f2f2;
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #3a3a3a;
     }
 
     .card {
-      max-width: 520px;
-      padding: 60px 50px;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(8px);
-      border-radius: 18px;
+      background: rgba(255,255,255,0.85);
+      padding: 60px 55px;
+      border-radius: 22px;
       text-align: center;
-      animation: fadeIn 2s ease;
+      max-width: 500px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+      animation: fadeIn 1.8s ease;
     }
 
-    .title {
+    .name {
       font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 28px;
+      font-size: 2.3rem;
+      margin-bottom: 24px;
     }
 
     .text {
       font-size: 1.05rem;
-      line-height: 1.8;
-      color: #e6e6e6;
-      margin-bottom: 40px;
+      line-height: 1.7;
+      margin-bottom: 36px;
     }
 
     .question {
       font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       margin-bottom: 30px;
     }
 
-    .tap {
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
-      opacity: 0.7;
+    button {
+      padding: 14px 36px;
+      border-radius: 999px;
+      border: 1px solid #c89ca0;
+      background: transparent;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .reveal {
+    button:hover {
+      background: #c89ca0;
+      color: white;
+    }
+
+    .answer {
       display: none;
       margin-top: 30px;
       font-size: 1.1rem;
-      animation: fadeIn 1.5s ease;
+      animation: fadeIn 1.2s ease;
     }
 
     .signature {
-      margin-top: 16px;
+      margin-top: 14px;
       font-size: 0.85rem;
       opacity: 0.8;
     }
@@ -79,31 +87,31 @@
   </style>
 </head>
 
-<body onclick="reveal()">
+<body>
 
   <div class="card">
-    <div class="title">Reha</div>
+    <div class="name">Reha</div>
 
     <div class="text">
-      If this moment ever becomes a memory,<br>
-      I hope it’s a good one.
+      If love is a moment,<br>
+      let this be one of them.
     </div>
 
     <div class="question">
       Will you be my Valentine?
     </div>
 
-    <div class="tap">( tap anywhere )</div>
+    <button onclick="show()">Yes</button>
 
-    <div class="reveal" id="revealText">
-      I’m glad this moment found you.<br>
+    <div class="answer" id="answer">
+      I was hoping you’d say that 🌷
       <div class="signature">— Yogesh</div>
     </div>
   </div>
 
   <script>
-    function reveal() {
-      document.getElementById("revealText").style.display = "block";
+    function show() {
+      document.getElementById("answer").style.display = "block";
     }
   </script>
 
