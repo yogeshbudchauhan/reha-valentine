@@ -125,3 +125,132 @@ button:hover {
     }
   </script></body>
 </html>
+
+On Sun, 1 Feb 2026, 11:49 am Yogesh, <yogeshbudchauhan01@gmail.com> wrote:
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine, Reha?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #ff9a9e, #fad0c4, #fad0c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: fadeIn 2s ease forwards;
+  max-width: 90%;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.2rem;
+  color: #b30059;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #4a0033;
+  margin-bottom: 30px;
+}
+
+.heart {
+  font-size: 4rem;
+  animation: pulse 1.5s infinite;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(135deg, #ff4d6d, #ff758f);
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.message {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #800040;
+  display: none;
+  animation: fadeIn 1s ease forwards;
+}
+
+.flower {
+  position: absolute;
+  top: -10%;
+  font-size: 24px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(120vh) rotate(360deg); }
+}
+
+  </style>
+</head>
+<body> <div class="container">
+    <div class="heart">❤️</div>
+    <h1>Reha</h1>
+    <p>Every little moment feels special when I think of you.</p>
+    <h1>Will you be my Valentine?</h1>
+    <button onclick="showMessage()">Yes 💖</button>
+    <div class="message" id="message">You just made my heart the happiest ❤️🌹</div>
+  </div> <script>
+    function showMessage() {
+      document.getElementById('message').style.display = 'block';
+    }
+
+    const flowers = ['🌸','🌹','💐','🌷','🌺'];
+    for (let i = 0; i < 30; i++) {
+      const flower = document.createElement('div');
+      flower.className = 'flower';
+      flower.innerText = flowers[Math.floor(Math.random() * flowers.length)];
+      flower.style.left = Math.random() * 100 + 'vw';
+      flower.style.animationDuration = (5 + Math.random() * 5) + 's';
+      flower.style.fontSize = (20 + Math.random() * 20) + 'px';
+      document.body.appendChild(flower);
+    }
+  </script></body>
+</html>
