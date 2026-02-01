@@ -18,32 +18,113 @@ body {
   height: 100vh;
   font-family: 'Inter', sans-serif;
   background:
-    linear-gradient(rgba(90,0,0,0.55), rgba(90,0,0,0.55)),
+    linear-gradient(rgba(80,0,0,0.55), rgba(80,0,0,0.55)),
     url('pexels-alleksana-6478815.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  overflow: hidden;
+  color: #ffffff;
 }
 
-/* subtle zoom animation */
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  animation: slowZoom 20s ease-in-out infinite alternate;
-  z-index: -1;
-}
-
-@keyframes slowZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.08); }
-}
-
+/* main card */
 .card {
-  max-width: 600px;
-  padding: 70px
+  max-width: 620px;
+  padding: 72px 58px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  text-align: center;
+  animation: fadeUp 1.8s ease forwards;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin-bottom: 28px;
+}
+
+.divider {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.45);
+  margin: 0 auto 34px;
+}
+
+.message span {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #f2f2f2;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.message span:nth-child(1) { animation-delay: 0.6s; }
+.message span:nth-child(2) { animation-delay: 1.2s; }
+.message span:nth-child(3) { animation-delay: 1.8s; }
+
+.question {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  margin-top: 44px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 2.4s;
+}
+
+.heart {
+  font-size: 1.6rem;
+  margin-top: 22px;
+  animation: heartbeat 2s infinite;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="name">Reha</div>
+  <div class="divider"></div>
+
+  <div class="message">
+    <span>Mero maya, Reha ❤️</span>
+    <span>Timi sundar matrai hoina, timi magical chauu.</span>
+    <span>Timro maya le malai bawla banai sakyo.</span>
+  </div>
+
+  <div class="question">
+    Be my Valentine… sadhai ko lagi
+  </div>
+
+  <div class="heart">❤️</div>
+
+  <div class="signature">— Yogesh</div>
+</div>
+
+</body>
+</html>
