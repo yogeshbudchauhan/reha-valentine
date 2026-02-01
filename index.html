@@ -1,150 +1,111 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>For Reha</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');* { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-  height: 100vh;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #0f0f14, #1a1a22);
-  color: #eaeaf0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
+    body {
+      height: 100vh;
+      font-family: 'Inter', sans-serif;
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+      background-size: cover;
+      background-position: center;
+      color: #f2f2f2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.grain {
-  position: fixed;
-  inset: 0;
-  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
-  opacity: 0.12;
-  pointer-events: none;
-}
+    .card {
+      max-width: 520px;
+      padding: 60px 50px;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
 
-.card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 24px;
-  padding: 60px 50px;
-  max-width: 520px;
-  text-align: center;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 40px 120px rgba(0,0,0,0.6);
-  animation: fadeUp 1.6s ease forwards;
-}
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 28px;
+    }
 
-.name {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  letter-spacing: 0.04em;
-  margin-bottom: 18px;
-}
+    .text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #e6e6e6;
+      margin-bottom: 40px;
+    }
 
-.line {
-  width: 48px;
-  height: 1px;
-  background: rgba(255,255,255,0.35);
-  margin: 0 auto 26px;
-}
+    .question {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      margin-bottom: 30px;
+    }
 
-.text {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #cfcfe6;
-  margin-bottom: 40px;
-}
+    .tap {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
+    }
 
-.question {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.9rem;
-  margin-bottom: 36px;
-}
+    .reveal {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.1rem;
+      animation: fadeIn 1.5s ease;
+    }
 
-.btn {
-  padding: 14px 36px;
-  font-size: 0.95rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.35s ease;
-  letter-spacing: 0.08em;
-}
+    .signature {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
 
-.btn:hover {
-  background: #ffffff;
-  color: #0f0f14;
-  transform: translateY(-2px);
-}
-
-.answer {
-  margin-top: 36px;
-  font-size: 1.1rem;
-  color: #e6e6ff;
-  display: none;
-  animation: fadeUp 1s ease forwards;
-}
-
-.signature {
-  margin-top: 22px;
-  font-size: 0.85rem;
-  color: #9a9ab8;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.orb {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #b18cff, transparent 60%);
-  filter: blur(80px);
-  top: -60px;
-  left: -80px;
-  opacity: 0.35;
-}
-
-.orb.two {
-  background: radial-gradient(circle at 30% 30%, #ff8fb1, transparent 60%);
-  bottom: -80px;
-  right: -60px;
-  top: auto;
-  left: auto;
-}
-
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
-<body> <div class="orb"></div>
-  <div class="orb two"></div>
-  <div class="grain"></div> <div class="card">
-    <div class="name">Reha</div>
-    <div class="line"></div><div class="text">
-  Some people change the pace of a day.<br>
-  Some quietly change the way it feels.
-</div>
 
-<div class="question">Will you be my Valentine?</div>
+<body onclick="reveal()">
 
-<button class="btn" onclick="reply()">YES</button>
+  <div class="card">
+    <div class="title">Reha</div>
 
-<div class="answer" id="answer">
-  I hoped you would say that.<br>
-  This moment stays with me.
-  <div class="signature">— Yogesh</div>
-</div>
+    <div class="text">
+      If this moment ever becomes a memory,<br>
+      I hope it’s a good one.
+    </div>
 
-  </div> <script>
-    function reply() {
-      document.getElementById('answer').style.display = 'block';
+    <div class="question">
+      Will you be my Valentine?
+    </div>
+
+    <div class="tap">( tap anywhere )</div>
+
+    <div class="reveal" id="revealText">
+      I’m glad this moment found you.<br>
+      <div class="signature">— Yogesh</div>
+    </div>
+  </div>
+
+  <script>
+    function reveal() {
+      document.getElementById("revealText").style.display = "block";
     }
-  </script></body>
+  </script>
+
+</body>
 </html>
