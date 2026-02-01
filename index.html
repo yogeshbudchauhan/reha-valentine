@@ -1,123 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For Reha</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Reha ❤️</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      height: 100vh;
-      font-family: 'Inter', sans-serif;
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-        url('pexels-alleksana-6478857.jpg');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f5f5f5;
-    }
+body {
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background:
+    linear-gradient(rgba(90,0,0,0.55), rgba(90,0,0,0.55)),
+    url('pexels-alleksana-6478815.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
 
-    .card {
-      max-width: 560px;
-      padding: 60px 50px;
-      background: rgba(0,0,0,0.35);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      text-align: center;
-      animation: fadeIn 2s ease;
-    }
+/* subtle zoom animation */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+  z-index: -1;
+}
 
-    .name {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      margin-bottom: 28px;
-    }
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
 
-    .message {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: #eaeaea;
-      margin-bottom: 42px;
-    }
-
-    .question {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 28px;
-    }
-
-    .hint {
-      font-size: 0.8rem;
-      letter-spacing: 0.2em;
-      opacity: 0.7;
-    }
-
-    .reveal {
-      display: none;
-      margin-top: 36px;
-      font-size: 1.15rem;
-      animation: fadeIn 1.5s ease;
-    }
-
-    .signature {
-      margin-top: 16px;
-      font-size: 0.85rem;
-      opacity: 0.85;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(24px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
-</head>
-
-<body onclick="showFinal()">
-
-  <div class="card">
-    <div class="name">Reha</div>
-
-    <div class="message">
-      Hey my beautiful Reha 😘<br><br>
-      Timi ta ekdam amazing chauu.<br>
-      Ma timro mayama full bawla bhai sake.
-    </div>
-
-    <div class="question">
-      So… will you be my Valentine? 💌
-    </div>
-
-    <div class="hint">( tap anywhere )</div>
-
-    <div class="reveal" id="finalText">
-      I meant every word.<br>
-      <div class="signature">— Yogesh</div>
-    </div>
-  </div>
-
-  <script>
-    function showFinal() {
-      document.getElementById("finalText").style.display = "block";
-    }
-  </script>
-
-</body>
-</html>
+.card {
+  max-width: 600px;
+  padding: 70px
