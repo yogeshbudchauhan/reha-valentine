@@ -17,48 +17,123 @@
 body {
   height: 100vh;
   font-family: 'Inter', sans-serif;
-  background:
-    linear-gradient(
-      rgba(40, 0, 0, 0.65),
-      rgba(40, 0, 0, 0.65)
-    ),
-    url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7');
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
 }
 
-/* Main card */
+/* dark blur overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(120, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+}
+
+/* message card */
 .card {
+  position: relative;
   max-width: 640px;
-  padding: 74px 60px;
-  background: rgba(0,0,0,0.38);
-  backdrop-filter: blur(14px);
+  padding: 70px 60px;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 26px;
   text-align: center;
+  z-index: 2;
   animation: fadeUp 1.8s ease forwards;
 }
 
 .name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.9rem;
-  margin-bottom: 30px;
+  font-size: 2.8rem;
+  margin-bottom: 26px;
+  color: #6b0000;
 }
 
 .divider {
-  width: 64px;
+  width: 60px;
   height: 1px;
-  background: rgba(255,255,255,0.45);
-  margin: 0 auto 36px;
+  background: #b44;
+  margin: 0 auto 34px;
 }
 
 .message span {
   display: block;
   font-size: 1.12rem;
   line-height: 1.9;
-  color: #f4f4f4;
+  color: #333;
   opacity: 0;
-  animation: fadeUp 1
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.message span:nth-child(1) { animation-delay: 0.6s; }
+.message span:nth-child(2) { animation-delay: 1.2s; }
+.message span:nth-child(3) { animation-delay: 1.8s; }
+
+.question {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  margin-top: 42px;
+  color: #6b0000;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards;
+  animation-delay: 2.4s;
+}
+
+.heart {
+  font-size: 1.8rem;
+  margin-top: 22px;
+  animation: heartbeat 2s infinite;
+}
+
+.signature {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="card">
+  <div class="name">Reha</div>
+  <div class="divider"></div>
+
+  <div class="message">
+    <span>Mero maya, Reha ❤️</span>
+    <span>Timi sundar matrai hoina, timi magical chauu.</span>
+    <span>Timro maya le malai bawla banai sakyo.</span>
+  </div>
+
+  <div class="question">
+    Be my Valentine… sadhai ko lagi
+  </div>
+
+  <div class="heart">❤️</div>
+
+  <div class="signature">— Yogesh</div>
+</div>
+
+</body>
+</html>
